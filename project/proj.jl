@@ -1,6 +1,7 @@
+include("integration.jl")
 using Gadfly
 using Cairo
-include("integration.jl")
+using LatexPrint
 
 
 data = readdlm("data_full.txt");	# at Voltages V = 3,4,5,6,7,8,9,10,11,12
@@ -51,7 +52,7 @@ for i in 3:12
 		 Guide.ylabel("B, Tesla"),
 		 Guide.title("Hysteresis Curve of Toroidal Iron Ring at $i V"),
 		 Theme(minor_label_font_size=14pt,major_label_font_size=14pt))
-	draw(PNG("v$i.png", 36cm, 18cm), p)
+	draw(PNG("v$i.png", 30cm, 15cm), p)
 end
 
 
@@ -113,8 +114,6 @@ V_err = sqrt((A_err*l)^2 + (l_err*A)^2);
 EpC[1,:] = V*EpCM[1,:];			# Energy per cycle of specific ring
 EpC[2,:] = sqrt((V_err*EpCM[1,:]).^2 + (V*EpCM[2,:].^2));
 
-EpCMmin = EpCM[1,:]-EpCM[2,:];
-EpCMmax = EpCM[1,:]+EpCM[2,:];
 EpCmin = EpC[1,:]-EpC[2,:];
 EpCmax = EpC[1,:]+EpC[2,:];
 
@@ -122,10 +121,10 @@ EpCmax = EpC[1,:]+EpC[2,:];
 println("Saving Energy plots")
 V = [3:12;]';
 pc = plot(x=V, y=EpC[1,:],	  
-	  ymin=EpCmin, ymax=EpCmax,
+	  ymin=EpCmin[:,:], ymax=EpCmax[:,:],
 	  Geom.point, Geom.errorbar,
 	  Guide.xlabel("Voltages, V"),
-	  Guide.ylabel("Energy per Cycle-Meter, J/Cycle-Meter"),
-	  Guide.title("Energies per Cycle/Meter, at Measured Voltages"),
+	  Guide.ylabel("Energy per Cycle, J/Cycle"),
+	  Guide.title("Energies per Cycle, at Measured Voltages"),
 	  Theme(minor_label_font_size=14pt,major_label_font_size=14pt))
-draw(PNG("energy.png", 36cm, 18cm), pc);
+draw(PNG("energy.png", 24cm, 12cm), pc);
