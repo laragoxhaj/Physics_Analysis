@@ -2,6 +2,7 @@
 ## i n t e g r a t i o n . j l
 ##
 
+# Copy of a function I added in a fork of NumericalMath.jl
 
 #= Same as above, except deals with arrays instead of vectors for batch integration:
    Assumes that each of the n separate columns represent n separate datasets and returns
