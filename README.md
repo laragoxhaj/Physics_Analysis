@@ -16,4 +16,5 @@
 	+ Lab 15: Atmosphere CO2 Concentration
 	+ Project Lab: Hysterisis in a Toroidal Iron Ring, includes integration.jl
 + Signal Processing
+	+ Lab 4:  Resonance Circuits
 	+ Chapter 10: Fourier Transform example code
