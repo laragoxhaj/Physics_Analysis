@@ -20,3 +20,4 @@
 	+ Lab 4:  Resonance Circuits
 	+ Chapter 10: Fourier Transform example code
 		+ TODO: Audio playback issues need fixing
+	+ powerSpectrum.jl : Return absolute magnitude power spectrum corresponding to frequency
