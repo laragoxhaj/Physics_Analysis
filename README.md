@@ -19,3 +19,4 @@
 	+ Lab 3:  Sinusoidal Response of RC, RL Circuits
 	+ Lab 4:  Resonance Circuits
 	+ Chapter 10: Fourier Transform example code
+		+ TODO: Audio playback issues need fixing
