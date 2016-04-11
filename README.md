@@ -18,6 +18,7 @@
 + Signal Processing
 	+ Lab 3:  Sinusoidal Response of RC, RL Circuits
 	+ Lab 4:  Resonance Circuits
+	+ Lab 5:  Black Box Circuit (Capacitor from input to output, resistor & inductor in series from ground to output)
 	+ Chapter 10: Fourier Transform example code
 		+ TODO: Audio playback issues need fixing
 	+ powerSpectrum.jl : Return absolute magnitude power spectrum corresponding to frequency
